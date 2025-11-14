@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Impressum – VAB Starnberg</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+      background: #f9fafb;
+      color: #111827;
+      line-height: 1.6;
+    }
+    .wrap {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px 16px 32px;
+    }
+    header {
+      text-align: center;
+      margin-bottom: 32px;
+    }
+    header h1 {
+      font-size: 24px;
+      font-weight: 600;
+      margin-bottom: 4px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    header p {
+      font-size: 13px;
+      color: #6b7280;
+    }
+    main {
+      background: #ffffff;
+      border: 1px solid #e5e7eb;
+      padding: 24px 20px 20px;
+      font-size: 14px;
+    }
+    h2 {
+      font-size: 16px;
+      margin-top: 16px;
+      margin-bottom: 4px;
+    }
+    p { margin-bottom: 6px; }
+    .muted { font-size: 12px; color: #6b7280; margin-top: 10px; }
+    a { color: #1d4ed8; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    footer {
+      margin-top: 24px;
+      padding-top: 14px;
+      border-top: 1px solid #e5e7eb;
+      font-size: 12px;
+      color: #6b7280;
+      display: flex;
+      justify-content: space-between;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    footer a {
+      color: #6b7280;
+      margin-left: 8px;
+      text-decoration: none;
+    }
+    footer a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1>Impressum</h1>
+      <p>VAB Starnberg – Vereinigung Alter Burschenschafter im Kreis Starnberg</p>
+    </header>
+
+    <main>
+      <h2>Angaben gemäß § 5 TMG</h2>
+      <p>
+        <!-- TODO: Verantwortliche Person & Anschrift eintragen -->
+        VAB Starnberg<br>
+        c/o Max Mustermann<br>
+        Musterstraße 1<br>
+        82319 Starnberg
+      </p>
+
+      <h2>Vertreten durch</h2>
+      <p>
+        Max Mustermann (Sprecher / Verantwortlicher für den Inhalt)
+      </p>
+
+      <h2>Kontakt</h2>
+      <p>
+        Telefon: 01234&nbsp;/&nbsp;567890<br>
+        E-Mail: <a href="mailto:info@vab-starnberg.de">info@vab-starnberg.de</a>
+      </p>
+
+      <h2>Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</h2>
+      <p>
+        Max Mustermann<br>
+        Anschrift wie oben
+      </p>
+
+      <h2>Haftung für Inhalte</h2>
+      <p>
+        Die Inhalte dieser Website wurden mit größter Sorgfalt erstellt.
+        Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte
+        können wir jedoch keine Gewähr übernehmen. Als Diensteanbieter
+        sind wir gemäß den gesetzlichen Bestimmungen für eigene Inhalte
+        auf diesen Seiten verantwortlich.
+      </p>
+
+      <h2>Haftung für Links</h2>
+      <p>
+        Unsere Website enthält in der Regel keine externen Links. Sollte
+        dies zukünftig der Fall sein, gilt: Für Inhalte externer Seiten,
+        auf die wir verlinken, sind ausschließlich deren Betreiber
+        verantwortlich. Zum Zeitpunkt der Verlinkung werden mögliche
+        Rechtsverstöße geprüft. Eine permanente inhaltliche Kontrolle
+        verlinkter Seiten ist jedoch ohne konkrete Anhaltspunkte einer
+        Rechtsverletzung nicht zumutbar.
+      </p>
+
+      <h2>Urheberrecht</h2>
+      <p>
+        Die durch die Betreiber dieser Seite erstellten Inhalte und Werke
+        auf diesen Seiten unterliegen dem deutschen Urheberrecht. Beiträge
+        Dritter sind als solche gekennzeichnet. Die Vervielfältigung,
+        Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb
+        der Grenzen des Urheberrechtes bedürfen der schriftlichen
+        Zustimmung des jeweiligen Autors bzw. Erstellers.
+      </p>
+
+      <p class="muted">
+        Hinweis: Dieses Impressum ist ein Muster und ersetzt keine
+        individuelle rechtliche Beratung. Bitte lassen Sie die Angaben
+        von einer fachkundigen Person prüfen.
+      </p>
+    </main>
+
+    <footer>
+      <div>© <span id="year"></span> VAB Starnberg</div>
+      <div>
+        <a href="index.html">Startseite</a> ·
+        <a href="datenschutz.html">Datenschutz</a>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
