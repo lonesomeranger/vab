@@ -1,339 +1,178 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <title>VAB Starnberg – Vereinigung Alter Burschenschafter</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="VAB Starnberg – Vereinigung Alter Burschenschafter im Kreis Starnberg." />
-
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="VAB Starnberg – Vereinigung Alter Burschenschafter im Kreis Starnberg.">
   <style>
-    :root {
-      --bg: #f4f4f5;
-      --bg-alt: #ffffff;
-      --border: #d4d4d8;
-      --text-main: #111827;
-      --text-muted: #4b5563;
-      --accent: #1f2937;
-      --accent-soft: #e5e7eb;
-      --max-width: 960px;
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
+    * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background-color: var(--bg);
-      color: var(--text-main);
-      line-height: 1.5;
+      font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+      background: #f9fafb;
+      color: #111827;
+      line-height: 1.6;
     }
-
-    .page {
-      max-width: var(--max-width);
+    .wrap {
+      max-width: 900px;
       margin: 0 auto;
-      padding: 24px 16px 40px;
+      padding: 40px 16px 32px;
     }
-
     header {
-      border-bottom: 1px solid var(--border);
-      padding-bottom: 16px;
-      margin-bottom: 24px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 16px;
-      flex-wrap: wrap;
+      text-align: center;
+      margin-bottom: 40px;
     }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .brand-mark {
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      border: 1px solid var(--border);
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    header h1 {
+      font-size: 28px;
       font-weight: 600;
-      font-size: 18px;
-      background-color: var(--bg-alt);
-      color: var(--accent);
-    }
-
-    .brand-text-title {
-      font-weight: 600;
-      font-size: 18px;
-    }
-
-    .brand-text-subtitle {
-      font-size: 13px;
-      color: var(--text-muted);
-    }
-
-    nav {
-      font-size: 14px;
-    }
-
-    nav a {
-      text-decoration: none;
-      color: var(--text-main);
-      margin-left: 16px;
-      border-bottom: 1px solid transparent;
-    }
-
-    nav a:hover {
-      border-bottom-color: var(--accent);
-    }
-
-    @media (max-width: 640px) {
-      nav {
-        width: 100%;
-        margin-top: 8px;
-      }
-      nav a {
-        margin-left: 0;
-        margin-right: 16px;
-      }
-    }
-
-    main {
-      display: grid;
-      grid-template-columns: 2fr 1fr;
-      gap: 24px;
-    }
-
-    @media (max-width: 880px) {
-      main {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    .section {
-      background-color: var(--bg-alt);
-      border: 1px solid var(--border);
-      padding: 20px 20px 18px;
-      margin-bottom: 16px;
-    }
-
-    .section + .section {
-      margin-top: 0;
-    }
-
-    .section h1,
-    .section h2 {
-      margin-bottom: 8px;
-    }
-
-    .section h1 {
-      font-size: 24px;
-      font-weight: 600;
-    }
-
-    .section h2 {
-      font-size: 18px;
-      font-weight: 600;
-    }
-
-    .lead {
-      font-size: 15px;
-      color: var(--text-muted);
-      margin-bottom: 8px;
-    }
-
-    .text {
-      font-size: 14px;
-      color: var(--text-main);
-      margin-bottom: 8px;
-    }
-
-    .text-muted {
-      font-size: 14px;
-      color: var(--text-muted);
-    }
-
-    .list {
-      margin-top: 8px;
-      padding-left: 18px;
-      font-size: 14px;
-      color: var(--text-main);
-    }
-
-    .list li + li {
-      margin-top: 4px;
-    }
-
-    .sidebar {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
-
-    .contact-box {
-      background-color: var(--bg-alt);
-      border: 1px solid var(--border);
-      padding: 18px 18px 16px;
-      font-size: 14px;
-    }
-
-    .contact-label {
-      font-size: 12px;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: var(--text-muted);
       margin-bottom: 4px;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
     }
+    header p {
+      font-size: 13px;
+      color: #6b7280;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+    }
+    nav {
+      margin-top: 18px;
+      font-size: 14px;
+    }
+    nav a {
+      color: #374151;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+    nav a:hover { text-decoration: underline; }
 
-    .contact-value {
+    .hero {
+      background: #ffffff;
+      border: 1px solid #e5e7eb;
+      padding: 28px 24px;
+      margin-bottom: 24px;
+    }
+    .hero h2 {
+      font-size: 20px;
       margin-bottom: 8px;
     }
-
-    .contact-value a {
-      color: var(--accent);
+    .hero p {
+      font-size: 14px;
+      color: #4b5563;
+    }
+    .grid {
+      display: grid;
+      gap: 24px;
+      grid-template-columns: 1.5fr 1fr;
+    }
+    @media (max-width: 820px) {
+      .grid { grid-template-columns: 1fr; }
+    }
+    .card {
+      background: #ffffff;
+      border: 1px solid #e5e7eb;
+      padding: 20px 20px 18px;
+      font-size: 14px;
+    }
+    .card h3 {
+      font-size: 16px;
+      margin-bottom: 8px;
+    }
+    .muted { color: #6b7280; font-size: 13px; }
+    .label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: #6b7280;
+      margin-bottom: 3px;
+    }
+    a {
+      color: #1d4ed8;
       text-decoration: none;
     }
-
-    .contact-value a:hover {
-      text-decoration: underline;
-    }
-
-    .meta {
-      font-size: 13px;
-      color: var(--text-muted);
-      margin-top: 4px;
-    }
-
+    a:hover { text-decoration: underline; }
     footer {
-      margin-top: 24px;
+      margin-top: 32px;
       padding-top: 16px;
-      border-top: 1px solid var(--border);
-      font-size: 12px;
-      color: var(--text-muted);
+      border-top: 1px solid #e5e7eb;
       display: flex;
       justify-content: space-between;
       gap: 8px;
       flex-wrap: wrap;
+      font-size: 12px;
+      color: #6b7280;
     }
-
     footer a {
-      color: var(--text-muted);
-      text-decoration: none;
+      color: #6b7280;
       margin-left: 8px;
+      text-decoration: none;
     }
-
-    footer a:hover {
-      text-decoration: underline;
-    }
+    footer a:hover { text-decoration: underline; }
   </style>
 </head>
 <body>
-  <div class="page">
+  <div class="wrap">
     <header>
-      <div class="brand">
-        <div class="brand-mark">V</div>
-        <div>
-          <div class="brand-text-title">VAB Starnberg</div>
-          <div class="brand-text-subtitle">Vereinigung Alter Burschenschafter im Kreis Starnberg</div>
-        </div>
-      </div>
+      <h1>VAB STARNBERG</h1>
+      <p>Vereinigung Alter Burschenschafter im Kreis Starnberg</p>
       <nav aria-label="Hauptnavigation">
-        <!-- Diese Links kannst du später auf eigene Seiten führen lassen -->
-        <a href="#ueber-uns">Über uns</a>
+        <a href="#willkommen">Willkommen</a>
         <a href="#treffen">Treffen</a>
         <a href="#kontakt">Kontakt</a>
       </nav>
     </header>
 
-    <main>
-      <!-- Hauptinhalt -->
-      <div>
-        <section class="section" id="ueber-uns">
-          <h1>VAB Starnberg</h1>
-          <p class="lead">
-            Vereinigung Alter Burschenschafter im Kreis Starnberg
-          </p>
-          <p class="text">
-            Wir sind eine Vereinigung Alter Burschenschafter im Kreis Starnberg,
-            die sich regelmäßig zum Austausch trifft. Falls Sie Alter Herr einer
-            studentischen Burschenschaft sind, würden wir uns freuen,
-            Sie demnächst kennenzulernen.
-          </p>
-        </section>
+    <section class="hero" id="willkommen">
+      <h2>Willkommen bei der VAB Starnberg</h2>
+      <p>
+        Wir sind eine Vereinigung alter Burschenschafter im Kreis Starnberg,
+        die sich regelmäßig zum Austausch trifft. Falls Sie Alter Herr einer
+        studentischen Burschenschaft sind, würden wir uns freuen,
+        Sie demnächst kennenzulernen.
+      </p>
+    </section>
 
-        <section class="section" id="treffen">
-          <h2>Treffen &amp; Austausch</h2>
-          <p class="text">
-            Im Mittelpunkt unserer Zusammenkünfte stehen der persönliche Austausch,
-            die Pflege gewachsener Verbindungen und die Möglichkeit,
-            sich generationenübergreifend zu begegnen.
-          </p>
-          <ul class="list">
-            <li>Regelmäßige Treffen im Raum Starnberg</li>
-            <li>Kollegialer Austausch in angenehmer Atmosphäre</li>
-            <li>Offen für Alte Herren verschiedener Burschenschaften</li>
-          </ul>
-        </section>
-      </div>
+    <section class="grid">
+      <article class="card" id="treffen">
+        <h3>Treffen &amp; Austausch</h3>
+        <p>
+          Im geschützten Rahmen pflegen wir kameradschaftlichen Austausch
+          und persönliche Begegnungen. Die Treffen finden in regelmäßigen
+          Abständen im Raum Starnberg statt.
+        </p>
+        <p class="muted">
+          Ort und Zeitpunkt der nächsten Zusammenkunft teilen wir Ihnen nach
+          kurzer Kontaktaufnahme gerne mit.
+        </p>
+      </article>
 
-      <!-- Seitenleiste -->
-      <aside class="sidebar" id="kontakt" aria-label="Kontaktbereich">
-        <div class="contact-box">
-          <h2>Kontakt</h2>
-          <p class="text">
-            Wenn Sie Alter Herr einer studentischen Burschenschaft sind und im oder
-            nahe dem Kreis Starnberg leben, freuen wir uns über Ihre Nachricht.
-          </p>
-
-          <div class="contact-label">E-Mail</div>
-          <div class="contact-value">
-            <!-- HIER deine echte E-Mail eintragen -->
-            <a href="mailto:info@vab-starnberg.de">info@vab-starnberg.de</a>
-          </div>
-
-          <div class="contact-label">Kurzvorstellung</div>
-          <p class="text">
-            Bitte stellen Sie sich in Ihrer E-Mail kurz vor und nennen Sie
-            Ihre Burschenschaft sowie Ihren Bezug zum Raum Starnberg.
-          </p>
-
-          <p class="meta">
-            Nach Ihrer Nachricht informieren wir Sie gerne über die nächsten Termine
-            und Möglichkeiten eines persönlichen Kennenlernens.
-          </p>
-        </div>
-
-        <div class="contact-box">
-          <h2>Hinweis</h2>
-          <p class="text-muted">
-            Die VAB Starnberg ist ein privater Zusammenschluss Alter Herren.
-            Aus der Teilnahme an unseren Treffen erwächst keine Pflicht
-            zu einer formalen Mitgliedschaft.
-          </p>
-        </div>
+      <aside class="card" id="kontakt">
+        <h3>Kontakt</h3>
+        <p>
+          Wenn Sie Alter Herr einer studentischen Burschenschaft sind und im
+          oder nahe dem Kreis Starnberg leben, freuen wir uns über Ihre Nachricht.
+        </p>
+        <div class="label">E-Mail</div>
+        <!-- TODO: Eigene E-Mail eintragen -->
+        <p><a href="mailto:info@vab-starnberg.de">info@vab-starnberg.de</a></p>
+        <p class="muted">
+          Bitte stellen Sie sich kurz vor und nennen Sie Ihre Burschenschaft
+          sowie Ihren Bezug zum Starnberger Raum.
+        </p>
       </aside>
-    </main>
+    </section>
 
     <footer>
+      <div>© <span id="year"></span> VAB Starnberg</div>
       <div>
-        © <span id="year"></span> VAB Starnberg
-      </div>
-      <div>
-        <!-- Hier später echte Links setzen -->
-        <a href="impressum.html">Impressum</a> |
+        <a href="impressum.html">Impressum</a> ·
         <a href="datenschutz.html">Datenschutz</a>
       </div>
     </footer>
   </div>
 
   <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
+    document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
