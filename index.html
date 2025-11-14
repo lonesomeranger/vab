@@ -6,22 +6,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="VAB Starnberg – Vereinigung Alter Burschenschafter im Kreis Starnberg." />
 
-  <!-- Google Font (optional, aber hübscher) -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-
   <style>
     :root {
-      --bg: #0f172a;
-      --bg-alt: #020617;
-      --accent: #eab308;
-      --accent-soft: rgba(234, 179, 8, 0.15);
-      --text: #e5e7eb;
-      --text-muted: #9ca3af;
-      --card-bg: rgba(15, 23, 42, 0.9);
-      --border-subtle: rgba(148, 163, 184, 0.35);
-      --radius-xl: 18px;
-      --radius-2xl: 26px;
-      --shadow-soft: 0 22px 50px rgba(15, 23, 42, 0.8);
+      --bg: #f4f4f5;
+      --bg-alt: #ffffff;
+      --border: #d4d4d8;
+      --text-main: #111827;
+      --text-muted: #4b5563;
+      --accent: #1f2937;
+      --accent-soft: #e5e7eb;
+      --max-width: 960px;
     }
 
     * {
@@ -31,109 +25,52 @@
     }
 
     body {
-      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-      background: radial-gradient(circle at top, #1f2937 0, #020617 55%, #000 100%);
-      color: var(--text);
-      min-height: 100vh;
-      display: flex;
-      justify-content: center;
-      padding: 32px 16px;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background-color: var(--bg);
+      color: var(--text-main);
+      line-height: 1.5;
     }
 
     .page {
-      width: 100%;
-      max-width: 1040px;
-      position: relative;
-      isolation: isolate;
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 24px 16px 40px;
     }
 
-    /* Dekorative Kreise im Hintergrund */
-    .glow {
-      position: absolute;
-      border-radius: 999px;
-      filter: blur(48px);
-      opacity: 0.65;
-      z-index: -1;
-    }
-    .glow.glow-left {
-      width: 260px;
-      height: 260px;
-      background: radial-gradient(circle, rgba(234, 179, 8, 0.4), transparent 70%);
-      top: -40px;
-      left: -80px;
-    }
-    .glow.glow-right {
-      width: 320px;
-      height: 320px;
-      background: radial-gradient(circle, rgba(59, 130, 246, 0.35), transparent 70%);
-      top: 120px;
-      right: -90px;
-    }
-
-    .shell {
-      border-radius: 32px;
-      padding: 1px;
-      background: linear-gradient(135deg,
-        rgba(148, 163, 184, 0.6),
-        rgba(55, 65, 81, 0.1),
-        rgba(250, 204, 21, 0.8)
-      );
-      box-shadow: var(--shadow-soft);
-    }
-
-    .content {
-      border-radius: 30px;
-      background: linear-gradient(145deg,
-        rgba(15, 23, 42, 0.96),
-        rgba(15, 23, 42, 0.98),
-        rgba(8, 47, 73, 0.95)
-      );
-      padding: 28px 20px 24px;
-    }
-
-    @media (min-width: 768px) {
-      .content {
-        padding: 32px 32px 28px;
-      }
-    }
-
-    /* Header / Navigation */
-    .topbar {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
+    header {
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 16px;
       margin-bottom: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
     }
 
     .brand {
       display: flex;
       align-items: center;
-      gap: 14px;
+      gap: 12px;
     }
 
-    .logo {
-      width: 42px;
-      height: 42px;
-      border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.8);
-      background: radial-gradient(circle at 30% 20%, #facc15, #854d0e);
+    .brand-mark {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 1px solid var(--border);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-weight: 800;
+      font-weight: 600;
       font-size: 18px;
-      letter-spacing: 0.08em;
-      color: #111827;
-      box-shadow: 0 10px 25px rgba(234, 179, 8, 0.55);
+      background-color: var(--bg-alt);
+      color: var(--accent);
     }
 
     .brand-text-title {
-      font-size: 17px;
       font-weight: 600;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: #e5e7eb;
+      font-size: 18px;
     }
 
     .brand-text-subtitle {
@@ -141,445 +78,261 @@
       color: var(--text-muted);
     }
 
-    .pill {
-      border-radius: 999px;
-      border: 1px solid rgba(156, 163, 175, 0.7);
-      padding: 6px 12px;
-      font-size: 12px;
-      color: var(--text-muted);
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: radial-gradient(circle at top left,
-        rgba(148, 163, 184, 0.25),
-        rgba(15, 23, 42, 0.94)
-      );
-      backdrop-filter: blur(10px);
+    nav {
+      font-size: 14px;
     }
 
-    .pill-dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 999px;
-      background: #22c55e;
-      box-shadow: 0 0 12px rgba(34, 197, 94, 0.9);
+    nav a {
+      text-decoration: none;
+      color: var(--text-main);
+      margin-left: 16px;
+      border-bottom: 1px solid transparent;
     }
 
-    /* Layout main */
-    .layout {
+    nav a:hover {
+      border-bottom-color: var(--accent);
+    }
+
+    @media (max-width: 640px) {
+      nav {
+        width: 100%;
+        margin-top: 8px;
+      }
+      nav a {
+        margin-left: 0;
+        margin-right: 16px;
+      }
+    }
+
+    main {
       display: grid;
+      grid-template-columns: 2fr 1fr;
       gap: 24px;
     }
 
-    @media (min-width: 900px) {
-      .layout {
-        grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
-        align-items: start;
+    @media (max-width: 880px) {
+      main {
+        grid-template-columns: 1fr;
       }
     }
 
-    /* Hero / Text */
-    .hero {
-      display: flex;
-      flex-direction: column;
-      gap: 18px;
+    .section {
+      background-color: var(--bg-alt);
+      border: 1px solid var(--border);
+      padding: 20px 20px 18px;
+      margin-bottom: 16px;
     }
 
-    .eyebrow {
-      font-size: 13px;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: var(--text-muted);
+    .section + .section {
+      margin-top: 0;
     }
 
-    .hero-title {
-      font-size: 30px;
-      line-height: 1.2;
-      letter-spacing: -0.03em;
-    }
-
-    @media (min-width: 768px) {
-      .hero-title {
-        font-size: 36px;
-      }
-    }
-
-    .hero-title span.highlight {
-      color: var(--accent);
-      text-shadow: 0 0 18px rgba(234, 179, 8, 0.65);
-    }
-
-    .hero-subtitle {
-      font-size: 15px;
-      color: var(--text-muted);
-      max-width: 42rem;
-    }
-
-    .hero-subtitle strong {
-      color: #e5e7eb;
-      font-weight: 500;
-    }
-
-    /* Info cards */
-    .info-grid {
-      display: grid;
-      gap: 14px;
-      margin-top: 6px;
-    }
-
-    @media (min-width: 600px) {
-      .info-grid {
-        grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
-      }
-    }
-
-    .card {
-      border-radius: var(--radius-xl);
-      border: 1px solid rgba(148, 163, 184, 0.55);
-      background: radial-gradient(circle at top,
-        rgba(15, 23, 42, 0.98),
-        rgba(15, 23, 42, 0.95)
-      );
-      padding: 14px 16px 14px;
-      box-shadow: 0 16px 35px rgba(15, 23, 42, 0.6);
-    }
-
-    .card-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 8px;
+    .section h1,
+    .section h2 {
       margin-bottom: 8px;
     }
 
-    .card-title {
-      font-size: 15px;
+    .section h1 {
+      font-size: 24px;
       font-weight: 600;
-      display: flex;
-      align-items: center;
-      gap: 8px;
     }
 
-    .card-title-dot {
-      width: 9px;
-      height: 9px;
-      border-radius: 999px;
-      background: var(--accent);
-      box-shadow: 0 0 10px rgba(234, 179, 8, 0.9);
+    .section h2 {
+      font-size: 18px;
+      font-weight: 600;
     }
 
-    .card-badge {
-      font-size: 11px;
-      padding: 4px 9px;
-      border-radius: 999px;
-      background: rgba(15, 23, 42, 0.7);
-      border: 1px solid rgba(148, 163, 184, 0.6);
+    .lead {
+      font-size: 15px;
       color: var(--text-muted);
-      white-space: nowrap;
+      margin-bottom: 8px;
     }
 
-    .card-text {
+    .text {
+      font-size: 14px;
+      color: var(--text-main);
+      margin-bottom: 8px;
+    }
+
+    .text-muted {
       font-size: 14px;
       color: var(--text-muted);
-      line-height: 1.5;
     }
 
-    .meta-list {
-      list-style: none;
+    .list {
       margin-top: 8px;
-      font-size: 13px;
-      color: var(--text-muted);
+      padding-left: 18px;
+      font-size: 14px;
+      color: var(--text-main);
     }
 
-    .meta-list li {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      margin-bottom: 4px;
+    .list li + li {
+      margin-top: 4px;
     }
 
-    .meta-bullet {
-      width: 6px;
-      height: 6px;
-      border-radius: 999px;
-      background: rgba(148, 163, 184, 0.9);
-    }
-
-    /* Sidebar / Kontakt */
     .sidebar {
-      border-radius: var(--radius-2xl);
-      border: 1px solid rgba(148, 163, 184, 0.6);
-      background: radial-gradient(circle at top,
-        rgba(15, 23, 42, 0.96),
-        rgba(15, 23, 42, 0.98)
-      );
-      padding: 16px 16px 14px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    @media (min-width: 900px) {
-      .sidebar {
-        padding: 18px 18px 16px;
-      }
-    }
-
-    .sidebar::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(circle at top right,
-        rgba(250, 204, 21, 0.18),
-        transparent 55%
-      );
-      opacity: 0.9;
-      pointer-events: none;
-    }
-
-    .sidebar-inner {
-      position: relative;
-      z-index: 1;
       display: flex;
       flex-direction: column;
-      gap: 14px;
-    }
-
-    .sidebar-title {
-      font-size: 16px;
-      font-weight: 600;
-    }
-
-    .sidebar-text {
-      font-size: 14px;
-      color: var(--text-muted);
-      line-height: 1.5;
+      gap: 16px;
     }
 
     .contact-box {
-      margin-top: 4px;
-      border-radius: 16px;
-      border: 1px dashed rgba(148, 163, 184, 0.7);
-      background: rgba(15, 23, 42, 0.6);
-      padding: 10px 12px;
-      font-size: 13px;
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-    }
-
-    .label {
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.15em;
-      color: var(--text-muted);
-    }
-
-    .value {
+      background-color: var(--bg-alt);
+      border: 1px solid var(--border);
+      padding: 18px 18px 16px;
       font-size: 14px;
     }
 
-    .value a {
+    .contact-label {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+      margin-bottom: 4px;
+    }
+
+    .contact-value {
+      margin-bottom: 8px;
+    }
+
+    .contact-value a {
       color: var(--accent);
       text-decoration: none;
     }
 
-    .value a:hover {
+    .contact-value a:hover {
       text-decoration: underline;
     }
 
-    .tag-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-      margin-top: 6px;
-    }
-
-    .tag {
-      font-size: 11px;
-      padding: 4px 8px;
-      border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.7);
-      background: rgba(15, 23, 42, 0.7);
+    .meta {
+      font-size: 13px;
       color: var(--text-muted);
-    }
-
-    .footnote {
-      margin-top: 8px;
-      font-size: 11px;
-      color: var(--text-muted);
+      margin-top: 4px;
     }
 
     footer {
-      margin-top: 18px;
-      padding-top: 12px;
-      border-top: 1px solid rgba(31, 41, 55, 0.9);
+      margin-top: 24px;
+      padding-top: 16px;
+      border-top: 1px solid var(--border);
+      font-size: 12px;
+      color: var(--text-muted);
       display: flex;
       justify-content: space-between;
-      flex-wrap: wrap;
       gap: 8px;
-      font-size: 11px;
-      color: var(--text-muted);
+      flex-wrap: wrap;
     }
 
-    footer span {
-      opacity: 0.85;
+    footer a {
+      color: var(--text-muted);
+      text-decoration: none;
+      margin-left: 8px;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
-  <main class="page">
-    <div class="glow glow-left"></div>
-    <div class="glow glow-right"></div>
+  <div class="page">
+    <header>
+      <div class="brand">
+        <div class="brand-mark">V</div>
+        <div>
+          <div class="brand-text-title">VAB Starnberg</div>
+          <div class="brand-text-subtitle">Vereinigung Alter Burschenschafter im Kreis Starnberg</div>
+        </div>
+      </div>
+      <nav aria-label="Hauptnavigation">
+        <!-- Diese Links kannst du später auf eigene Seiten führen lassen -->
+        <a href="#ueber-uns">Über uns</a>
+        <a href="#treffen">Treffen</a>
+        <a href="#kontakt">Kontakt</a>
+      </nav>
+    </header>
 
-    <div class="shell">
-      <div class="content">
-        <!-- Kopfbereich -->
-        <header class="topbar">
-          <div class="brand">
-            <div class="logo">V</div>
-            <div>
-              <div class="brand-text-title">VAB Starnberg</div>
-              <div class="brand-text-subtitle">Vereinigung Alter Burschenschafter im Kreis Starnberg</div>
-            </div>
-          </div>
-          <div class="pill">
-            <span class="pill-dot"></span>
-            <span>Tradition &amp; Austausch im Starnberger Raum</span>
-          </div>
-        </header>
-
-        <!-- Hauptlayout -->
-        <section class="layout" aria-label="Vorstellung VAB Starnberg">
-          <!-- Linke Spalte -->
-          <div class="hero">
-            <div>
-              <div class="eyebrow">Willkommen</div>
-              <h1 class="hero-title">
-                VAB Starnberg<br />
-                <span class="highlight">Vereinigung Alter Burschenschafter</span>
-              </h1>
-            </div>
-
-            <p class="hero-subtitle">
-              Wir sind eine Vereinigung Alter Burschenschafter im Kreis Starnberg,
-              die sich regelmäßig zum Austausch trifft. Falls Sie Alter Herr einer
-              studentischen Burschenschaft sind, würden wir uns freuen,
-              Sie demnächst kennenzulernen.
-            </p>
-
-            <div class="info-grid">
-              <!-- Über uns -->
-              <article class="card">
-                <div class="card-header">
-                  <h2 class="card-title">
-                    <span class="card-title-dot"></span>
-                    Über unsere Vereinigung
-                  </h2>
-                  <span class="card-badge">Regional vernetzt</span>
-                </div>
-                <p class="card-text">
-                  Im Mittelpunkt unserer Treffen stehen kameradschaftlicher Austausch,
-                  persönliche Begegnungen und das Fortführen studentischer Traditionen
-                  im Starnberger Raum – ganz ohne Verpflichtungen, aber mit
-                  Verbundenheit und Interesse füreinander.
-                </p>
-                <ul class="meta-list">
-                  <li>
-                    <span class="meta-bullet"></span>
-                    Offener Kreis für Alte Herren verschiedener Burschenschaften
-                  </li>
-                  <li>
-                    <span class="meta-bullet"></span>
-                    Persönliche Gespräche statt anonymer Netzwerke
-                  </li>
-                </ul>
-              </article>
-
-              <!-- Treffen -->
-              <article class="card">
-                <div class="card-header">
-                  <h2 class="card-title">
-                    <span class="card-title-dot"></span>
-                    Treffen &amp; Austausch
-                  </h2>
-                  <span class="card-badge">Regelmäßig</span>
-                </div>
-                <p class="card-text">
-                  Wir treffen uns in regelmäßigen Abständen im Kreis Starnberg
-                  zu gemütlichen Abenden und zwanglosen Gesprächen.
-                  Neue Gesichter sind jederzeit willkommen.
-                </p>
-                <ul class="meta-list">
-                  <li>
-                    <span class="meta-bullet"></span>
-                    Ort: wechselnde Lokalitäten im Raum Starnberg
-                  </li>
-                  <li>
-                    <span class="meta-bullet"></span>
-                    Teilnahme: nach kurzer vorheriger Kontaktaufnahme
-                  </li>
-                </ul>
-              </article>
-            </div>
-          </div>
-
-          <!-- Rechte Spalte / Kontakt -->
-          <aside class="sidebar" aria-label="Kontakt zur VAB Starnberg">
-            <div class="sidebar-inner">
-              <div>
-                <h2 class="sidebar-title">Kontakt &amp; Kennenlernen</h2>
-                <p class="sidebar-text">
-                  Sie sind Alter Herr einer studentischen Burschenschaft und leben
-                  im oder nahe dem Kreis Starnberg? Dann freuen wir uns auf Ihre Nachricht.
-                </p>
-              </div>
-
-              <div class="contact-box">
-                <div>
-                  <div class="label">Kontakt per E-Mail</div>
-                  <div class="value">
-                    <!-- HIER deine echte E-Mail eintragen -->
-                    <a href="mailto:info@vab-starnberg.de">info@vab-starnberg.de</a>
-                  </div>
-                </div>
-                <div>
-                  <div class="label">Anschreiben</div>
-                  <div class="value">
-                    Bitte stellen Sie sich kurz vor und nennen Sie Ihre Burschenschaft
-                    sowie Ihren Bezug zum Raum Starnberg.
-                  </div>
-                </div>
-                <div class="tag-row">
-                  <span class="tag">Alte Herren</span>
-                  <span class="tag">Burschenschaft</span>
-                  <span class="tag">Starnberg</span>
-                  <span class="tag">Vernetzung</span>
-                </div>
-              </div>
-
-              <p class="sidebar-text">
-                Gern informieren wir Sie unverbindlich über unsere nächsten Termine
-                und laden Sie zu einem ersten persönlichen Kennenlernen ein.
-              </p>
-
-              <p class="footnote">
-                Hinweis: Die VAB Starnberg ist ein privater Zusammenschluss Alter Herren.
-                Es besteht keine Verpflichtung zur Mitgliedschaft.
-              </p>
-            </div>
-          </aside>
+    <main>
+      <!-- Hauptinhalt -->
+      <div>
+        <section class="section" id="ueber-uns">
+          <h1>VAB Starnberg</h1>
+          <p class="lead">
+            Vereinigung Alter Burschenschafter im Kreis Starnberg
+          </p>
+          <p class="text">
+            Wir sind eine Vereinigung Alter Burschenschafter im Kreis Starnberg,
+            die sich regelmäßig zum Austausch trifft. Falls Sie Alter Herr einer
+            studentischen Burschenschaft sind, würden wir uns freuen,
+            Sie demnächst kennenzulernen.
+          </p>
         </section>
 
-        <footer>
-          <span>© <span id="year"></span> VAB Starnberg</span>
-          <span>Kreis Starnberg – Vereinigung Alter Burschenschafter</span>
-        </footer>
+        <section class="section" id="treffen">
+          <h2>Treffen &amp; Austausch</h2>
+          <p class="text">
+            Im Mittelpunkt unserer Zusammenkünfte stehen der persönliche Austausch,
+            die Pflege gewachsener Verbindungen und die Möglichkeit,
+            sich generationenübergreifend zu begegnen.
+          </p>
+          <ul class="list">
+            <li>Regelmäßige Treffen im Raum Starnberg</li>
+            <li>Kollegialer Austausch in angenehmer Atmosphäre</li>
+            <li>Offen für Alte Herren verschiedener Burschenschaften</li>
+          </ul>
+        </section>
       </div>
-    </div>
-  </main>
+
+      <!-- Seitenleiste -->
+      <aside class="sidebar" id="kontakt" aria-label="Kontaktbereich">
+        <div class="contact-box">
+          <h2>Kontakt</h2>
+          <p class="text">
+            Wenn Sie Alter Herr einer studentischen Burschenschaft sind und im oder
+            nahe dem Kreis Starnberg leben, freuen wir uns über Ihre Nachricht.
+          </p>
+
+          <div class="contact-label">E-Mail</div>
+          <div class="contact-value">
+            <!-- HIER deine echte E-Mail eintragen -->
+            <a href="mailto:info@vab-starnberg.de">info@vab-starnberg.de</a>
+          </div>
+
+          <div class="contact-label">Kurzvorstellung</div>
+          <p class="text">
+            Bitte stellen Sie sich in Ihrer E-Mail kurz vor und nennen Sie
+            Ihre Burschenschaft sowie Ihren Bezug zum Raum Starnberg.
+          </p>
+
+          <p class="meta">
+            Nach Ihrer Nachricht informieren wir Sie gerne über die nächsten Termine
+            und Möglichkeiten eines persönlichen Kennenlernens.
+          </p>
+        </div>
+
+        <div class="contact-box">
+          <h2>Hinweis</h2>
+          <p class="text-muted">
+            Die VAB Starnberg ist ein privater Zusammenschluss Alter Herren.
+            Aus der Teilnahme an unseren Treffen erwächst keine Pflicht
+            zu einer formalen Mitgliedschaft.
+          </p>
+        </div>
+      </aside>
+    </main>
+
+    <footer>
+      <div>
+        © <span id="year"></span> VAB Starnberg
+      </div>
+      <div>
+        <!-- Hier später echte Links setzen -->
+        <a href="impressum.html">Impressum</a> |
+        <a href="datenschutz.html">Datenschutz</a>
+      </div>
+    </footer>
+  </div>
 
   <script>
-    // Aktuelles Jahr automatisch setzen
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 </body>
